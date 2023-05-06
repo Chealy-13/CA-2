@@ -12,6 +12,6 @@ package com.chris.ca2;
 public class CA2 {
 
     public static void main(String[] args) {
-        System.out.println("welcome!");
+        System.out.println("6/05 test");
     }
 }
