@@ -5,7 +5,7 @@
 package com.chris.ca2;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
+
 
 /**
  *
@@ -17,13 +17,23 @@ public class Patient {
     String sName;
     LocalDate dob;
     LocalDate joinDate;
-    private LinkedList<Appointments> appointments;
+    private LinkedList appointments;
     //• The appointments associated with the Patient (an Appointment LinkedList). 
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public Patient() {
     }
 
-    public Patient(String fName, String sName, LocalDate dob, LocalDate joinDate, LinkedList<Appointments> appointments) {
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
+    public Patient(String fName, String sName, LocalDate dob, LocalDate joinDate, LinkedList appointments) {
         this.fName = fName;
         this.sName = sName;
         this.dob = dob;
@@ -31,43 +41,93 @@ public class Patient {
         this.appointments = appointments;
     } 
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public String getfName() {
         return fName;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public String getsName() {
         return sName;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public LocalDate getDob() {
         return dob;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public LocalDate getJoinDate() {
         return joinDate;
     }
 
-    public LinkedList<Appointments> getAppointments() {
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
+    public LinkedList getAppointments() {
         return appointments;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public void setfName(String fName) {
         this.fName = fName;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public void setsName(String sName) {
         this.sName = sName;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
     public void setJoinDate(LocalDate joinDate) {
         this.joinDate = joinDate;
     }
 
-    public void setAppointments(LinkedList<Appointments> appointments) {
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
+    public void setAppointments(LinkedList appointments) {
         this.appointments = appointments;
     }
 
