@@ -12,27 +12,27 @@ import java.time.LocalDate;
  */
 public class Appointment implements Comparable<Appointment> {
 
-    String pFirstName;
-    String pLastName;
-    LocalDate pDOB;
-    String issue;
-    int triageLvl;
-    String docName;
+    private String pFirstName;
+    private String pLastName;
+    private LocalDate pDOB;
+    private String issue;
+    private int triageLvl;
+    private String docName;
 
 //Two Appointment are considered equal where they have the same patient data, issue and date, (irrespective of the rest of their
 //fields). The natural order for Appointment is by triage level, where 1 has a higher priority than 5.
     /**
-     * Get the value of string
+     * Constructs a new Appointment object with default values for all fields
      *
-     * @return the value of string
+     * All strings will be empty, date will be set to current date, int will be 0
      */
     public Appointment() {
     }
 
     /**
-     * Get the value of string
+     * Constructs a new Appointment object with specific fields
      *
-     * @return the value of string
+     * All strings will be empty, date will be set to current date, int will be 0
      */
     public Appointment(String pFirstName, String pLastName, LocalDate pDOB, String issue, int triageLvl, String docName) {
         this.pFirstName = pFirstName;
@@ -44,123 +44,128 @@ public class Appointment implements Comparable<Appointment> {
     }
 
     /**
-     * Get the value of string
+     * Get first name of patient
      *
-     * @return the value of string
+     * @return String pFirstname, the first name of the patient
      */
     public String getpFirstName() {
         return pFirstName;
     }
 
     /**
-     * Get the value of string
+     * Get last name of patient
      *
-     * @return the value of string
+     * @return String pLastname, the last name of the patient
      */
     public String getpLastName() {
         return pLastName;
     }
 
     /**
-     * Get the value of string
+     * Get Date of birth of patient
      *
-     * @return the value of string
+     * @return localDate pDOB, the date of birth of patient
      */
     public LocalDate getpDOB() {
         return pDOB;
     }
 
     /**
-     * Get the value of string
+     * Get issue of patient
      *
-     * @return the value of string
+     * @return issue, String of the issue patient has
      */
     public String getIssue() {
         return issue;
     }
 
     /**
-     * Get the value of string
+     * Get Triage level
      *
-     * @return the value of string
+     * @return triageLvl, int of triage level for patients issue
      */
     public int getTriageLvl() {
         return triageLvl;
     }
 
     /**
-     * Get the value of string
+     * Get doctors name
      *
-     * @return the value of string
+     * @return docName, string of doctors name
      */
     public String getDocName() {
         return docName;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Sets the first name of patient to parameter
+     *@param String pFirstName, the new name
+     * @return pFirstName, the string updated first name
      */
     public void setpFirstName(String pFirstName) {
         this.pFirstName = pFirstName;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Sets the last name of patient to parameter
+     *@param String pLastName, the new name
+     * @return pLastName, the string updated last name
      */
     public void setpLastName(String pLastName) {
         this.pLastName = pLastName;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Set the value of patients DOB
+     * @param LocalDate pDOB, the new date of birth
+     * @return pDob, the updated date of birth for patient
      */
     public void setpDOB(LocalDate pDOB) {
         this.pDOB = pDOB;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Set the value of issue of patient
+     * @param String issue
+     * @return issue, the updated string issue of patient
      */
     public void setIssue(String issue) {
         this.issue = issue;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Set the triage Level of patient
+     * @param int triageeLvl
+     * @return triageLvl, updated int triage level of patient
      */
     public void setTriageLvl(int triageLvl) {
         this.triageLvl = triageLvl;
     }
 
     /**
-     * Get the value of string
-     *
-     * @return the value of string
+     * Set the doctors name
+     * @param String docName
+     * @return docName, the updated string doctors name
      */
     public void setDocName(String docName) {
         this.docName = docName;
     }
 
     /**
-     * Get the value of string
+     * Gets the Appointment object displayed as a string
      *
-     * @return the value of string
+     * @return String representation of the object
      */
     @Override
     public String toString() {
         return "Appointment{" + "pFirstName=" + pFirstName + ", pLastName=" + pLastName + ", pDOB=" + pDOB + ", issue=" + issue + ", triageLvl=" + triageLvl + ", docName=" + docName + '}';
     }
 
+    /**
+     * Compares this object to a particular object to see if equal
+     * @param object o, object to compare with
+     * @return boolean, true if object equals specified object, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (o == this) {
@@ -176,6 +181,11 @@ public class Appointment implements Comparable<Appointment> {
                 && appointment.issue.equals(issue);
     }
 
+    /**
+     * Compares an appointment object with another appointment object based on triage level
+     * @param Appointment app, object to compare with
+     * @return int, negative, positive or 0 if object is less than, greater than or equal to other object
+     */
     @Override
     public int compareTo(Appointment app) {
         if (this.getTriageLvl() < app.getTriageLvl()) {

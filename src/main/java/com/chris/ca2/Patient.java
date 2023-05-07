@@ -13,10 +13,10 @@ import java.time.LocalDate;
  */
 public class Patient {
 
-    String fName;
-    String sName;
-    LocalDate dob;
-    LocalDate joinDate;
+    private String fName;
+    private String sName;
+    private LocalDate dob;
+    private LocalDate joinDate;
     private LinkedList appointments;
     //• The appointments associated with the Patient (an Appointment LinkedList). 
 
