@@ -6,7 +6,6 @@ package com.chris.ca2;
 
 import java.time.LocalDate;
 
-
 /**
  *
  * @author chris
@@ -21,17 +20,19 @@ public class Patient {
     //• The appointments associated with the Patient (an Appointment LinkedList). 
 
     /**
-     * Get the value of string
+     * Constructs a new Patient object with default values for all fields
      *
-     * @return the value of string
+     * All strings will be empty, date will be set to current date, Linkedlist
+     * will be empty
      */
     public Patient() {
     }
 
     /**
-     * Get the value of string
+     * Constructs a new Patient object with specific fields
      *
-     * @return the value of string
+     * All strings will be empty, date will be set to current date, Linkedlist
+     * will be empty
      */
     public Patient(String fName, String sName, LocalDate dob, LocalDate joinDate, LinkedList appointments) {
         this.fName = fName;
@@ -39,19 +40,19 @@ public class Patient {
         this.dob = dob;
         this.joinDate = joinDate;
         this.appointments = appointments;
-    } 
+    }
 
     /**
-     * Get the value of string
+     * Get the value of first name of patient
      *
-     * @return the value of string
+     * @return the value of the string
      */
     public String getfName() {
         return fName;
     }
 
     /**
-     * Get the value of string
+     * Get the value of second name of Patient
      *
      * @return the value of string
      */
@@ -60,72 +61,77 @@ public class Patient {
     }
 
     /**
-     * Get the value of string
+     * Get the value of the patients date of birth
      *
-     * @return the value of string
+     * @return the value of DOB
      */
     public LocalDate getDob() {
         return dob;
     }
 
     /**
-     * Get the value of string
+     * Get the LocalDate value of the customers join date
      *
-     * @return the value of string
+     * @return the value of the join Date
      */
     public LocalDate getJoinDate() {
         return joinDate;
     }
 
     /**
-     * Get the value of string
+     * Get the linkedList of appointments
      *
-     * @return the value of string
+     * @return the value inside the linkedList
      */
     public LinkedList getAppointments() {
         return appointments;
     }
 
     /**
-     * Get the value of string
+     * Set the first name of the patient
      *
-     * @return the value of string
+     * @param the String name to be updated
+     * @return the value of updated first name
      */
     public void setfName(String fName) {
         this.fName = fName;
     }
 
     /**
-     * Get the value of string
+     * Set the last name of the patient
      *
-     * @return the value of string
+     * @param the String name to be updated
+     * @return the value of updated last name
      */
     public void setsName(String sName) {
         this.sName = sName;
     }
 
     /**
-     * Get the value of string
+     * Set the value of patients DOB
      *
-     * @return the value of string
+     * @param the date to update
+     * @return the value of localDate of patients dob
      */
     public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
     /**
-     * Get the value of string
+     * Set the join date of a customer
      *
-     * @return the value of string
+     * @param the joindate to update
+     * @return the value of the updated join date
      */
     public void setJoinDate(LocalDate joinDate) {
         this.joinDate = joinDate;
     }
 
     /**
-     * Get the value of string
+     * Set appointments in the linked List
      *
-     * @return the value of string
+     * @param the linkedlist of appointments to update
+     * @return the updated linkedList
      */
     public void setAppointments(LinkedList appointments) {
         this.appointments = appointments;
@@ -133,6 +139,12 @@ public class Patient {
 
 //Two Patients are considered equal where they have the same first name, second name and date of birth (irrespective of the rest
 //of their fields).
+    /**
+     * compares the patient object to the specified object to see if equal
+     *
+     * @param the object to compare the patient against
+     * @return boolean, true if both objects match, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (o == this) {
