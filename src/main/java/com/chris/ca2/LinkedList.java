@@ -48,7 +48,7 @@ public class LinkedList {
         return true;
     }
 
-    public int get(int index) {
+    public Appointment get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Invalid position provided");
         }
@@ -92,7 +92,7 @@ public class LinkedList {
         return true;
     }
 
-    public int indexOf(int value) {
+    public int indexOf(Appointment value) {
         if (first == null) {
             return -1;
         }
@@ -107,7 +107,7 @@ public class LinkedList {
         return -1;
     }
 
-    public int set(int index, int value) {
+    public Appointment set(int index, Appointment value) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Invalid position provided");
         }
@@ -115,7 +115,7 @@ public class LinkedList {
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
-        int original = current.data;
+        Appointment original = current.data;
         current.data = value;
         return original;
     }
@@ -149,10 +149,10 @@ public class LinkedList {
 
     protected static class Node {
 
-        protected int data;
-        protected Node next;
+        protected Appointment data;
+        protected Appointment next;
 
-        public Node(int value) {
+        public Node(Appointment value) {
             this.data = value;
             this.next = null;
         }

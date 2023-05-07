@@ -133,5 +133,17 @@ public class Patient {
 
 //Two Patients are considered equal where they have the same first name, second name and date of birth (irrespective of the rest
 //of their fields).
-    
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Patient)) {
+            return false;
+        }
+        Patient patient = (Patient) o;
+        return patient.fName.equals(fName)
+                && patient.sName.equals(sName)
+                && patient.dob.equals(dob);
+    }
 }
