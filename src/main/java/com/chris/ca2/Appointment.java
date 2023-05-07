@@ -10,7 +10,7 @@ import java.time.LocalDate;
  *
  * @author chris
  */
-public class Appointment implements Comparable<Appointment>{
+public class Appointment implements Comparable<Appointment> {
 
     String pFirstName;
     String pLastName;
@@ -21,7 +21,6 @@ public class Appointment implements Comparable<Appointment>{
 
 //Two Appointment are considered equal where they have the same patient data, issue and date, (irrespective of the rest of their
 //fields). The natural order for Appointment is by triage level, where 1 has a higher priority than 5.
-    
     /**
      * Get the value of string
      *
@@ -43,7 +42,7 @@ public class Appointment implements Comparable<Appointment>{
         this.triageLvl = triageLvl;
         this.docName = docName;
     }
-    
+
     /**
      * Get the value of string
      *
@@ -52,7 +51,7 @@ public class Appointment implements Comparable<Appointment>{
     public String getpFirstName() {
         return pFirstName;
     }
-    
+
     /**
      * Get the value of string
      *
@@ -61,7 +60,7 @@ public class Appointment implements Comparable<Appointment>{
     public String getpLastName() {
         return pLastName;
     }
-    
+
     /**
      * Get the value of string
      *
@@ -163,12 +162,27 @@ public class Appointment implements Comparable<Appointment>{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Appointment)) {
+            return false;
+        }
+        Appointment appointment = (Appointment) o;
+        return appointment.pFirstName.equals(pFirstName)
+                && appointment.pLastName.equals(pLastName)
+                && appointment.pDOB.equals(pDOB)
+                && appointment.issue.equals(issue);
+    }
+
+    @Override
     public int compareTo(Appointment app) {
-        if (this.getTriageLvl()< app.getTriageLvl()) {
+        if (this.getTriageLvl() < app.getTriageLvl()) {
             return -1;
-        }else if (this.getTriageLvl() > app.getTriageLvl()){
+        } else if (this.getTriageLvl() > app.getTriageLvl()) {
             return 1;
-        }else{
+        } else {
             return 0;
         }
     }
